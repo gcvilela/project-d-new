@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       {/* Cabeçalho branco ocupando 100% da largura */}
-      <header className='w-screen bg-white dark:bg-zinc-100 py-4 shadow-sm'>
+      <header className='w-screen bg-white dark:bg-zinc-100 py-3 shadow-sm'>
         <div className='max-w-4xl mx-auto text-center px-4'>
           <div className='flex items-center justify-center gap-2 mb-1'>
             <Image

@@ -10,7 +10,7 @@ export default function FloatingChat() {
       {/* Botão flutuante */}
       <button
         onClick={() => setOpen(!open)}
-        className='fixed bottom-6 right-6 z-50 bg-purple-600 hover:bg-purple-700 text-white p-4 rounded-full shadow-lg transition-all'
+        className='fixed bottom-6 right-6 z-50 dark:bg-zinc-900 text-white border border-white p-4 rounded-full shadow-lg transition-all hover:bg-zinc-800'
         aria-label='Abrir chat'
       >
         <MessageCircle size={24} />
@@ -20,20 +20,20 @@ export default function FloatingChat() {
       {open && (
         <div className='fixed bottom-20 right-6 w-80 bg-white border border-zinc-300 rounded-xl shadow-lg z-50'>
           <div className='p-4 border-b font-semibold text-zinc-800'>
-            Chat com a FURIA
+            Fale com a gente!
           </div>
           <div className='p-4 h-64 overflow-y-auto text-sm text-zinc-700'>
             <div className='mb-2 bg-zinc-100 p-2 rounded'>
-              Fala, fã! Como posso te ajudar hoje? 🦁
+              Fala, FURIOSO! Como posso te ajudar hoje?
             </div>
           </div>
           <div className='p-2 border-t flex gap-2'>
             <input
               type='text'
               placeholder='Digite sua mensagem...'
-              className='flex-1 px-3 py-2 border rounded text-sm'
+              className='flex-1 px-3 py-2 border rounded text-sm text-zinc-700'
             />
-            <button className='bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded text-sm'>
+            <button className='dark:bg-zinc-900 hover:bg-zinc-700 text-white border-white px-3 py-2 rounded text-sm'>
               Enviar
             </button>
           </div>
