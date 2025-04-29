@@ -7,13 +7,13 @@ export default function Home() {
     <>
       {/* Cabeçalho branco ocupando 100% da largura */}
       <header className='w-screen bg-white dark:bg-zinc-100 py-3 shadow-sm'>
-        <div className='max-w-4xl mx-auto text-center px-4'>
-          <div className='flex items-center justify-center gap-2 mb-1'>
+        <div className='w-full mx-auto text-center bg-pink-500'>
+          <div className='flex items-center justify-center gap-2 mb-1 bg-green-500'>
             <Image
               src='/logo-furia-titulo.svg'
               alt='FURIA título'
-              width={80}
-              height={80}
+              width={90}
+              height={90}
             />
           </div>
           <p className='text-zinc-600 dark:text-zinc-800 text-sm'>
@@ -74,9 +74,9 @@ export default function Home() {
               href='https://www.furia.gg'
               target='_blank'
               rel='noopener noreferrer'
-              className='inline-block bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium shadow transition'
+              className='inline-block dark:bg-zinc-900  hover:bg-zinc-700 text-white border-white border-1 px-6 py-3 rounded-lg font-medium shadow transition'
             >
-              Visite a loja oficial da FURIA 🛒
+              Visite a loja oficial da FURIA
             </Link>
           </section>
         </main>
