@@ -5,25 +5,27 @@ import FloatingChat from './components/FloatingChat';
 export default function Home() {
   return (
     <>
-      <div className='min-h-screen bg-zinc-50 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 px-6 py-10'>
-        <header className='mb-10 text-center'>
-          <div className='flex items-center justify-center gap-4 mb-2'>
+      {/* Cabeçalho branco ocupando 100% da largura */}
+      <header className='w-screen bg-white dark:bg-zinc-100 py-4 shadow-sm'>
+        <div className='max-w-4xl mx-auto text-center px-4'>
+          <div className='flex items-center justify-center gap-2 mb-1'>
             <Image
-              src='/furia-icon.png'
-              alt='FURIA logo'
-              width={60} // aumente conforme desejar
-              height={60}
-              className='rounded-full'
+              src='/logo-furia-titulo.svg'
+              alt='FURIA título'
+              width={80}
+              height={80}
             />
-            <h1 className='text-4xl font-bold'>FURIA Notícias</h1>
           </div>
-          <p className='text-zinc-500 dark:text-zinc-400'>
+          <p className='text-zinc-600 dark:text-zinc-800 text-sm'>
             Acompanhe tudo sobre o time de CS da FURIA
           </p>
-        </header>
+        </div>
+      </header>
 
+      {/* Conteúdo principal da página */}
+      <div className='min-h-screen bg-zinc-50 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 px-6 py-10'>
         <main className='grid gap-12 max-w-4xl mx-auto'>
-          {/* Seção: Últimos Jogos */}
+          {/* Últimos Jogos */}
           <section>
             <h2 className='text-2xl font-semibold mb-4'>Últimos Jogos</h2>
             <ul className='grid gap-4'>
@@ -36,7 +38,7 @@ export default function Home() {
             </ul>
           </section>
 
-          {/* Seção: Próximos Jogos */}
+          {/* Próximos Jogos */}
           <section>
             <h2 className='text-2xl font-semibold mb-4'>Próximos Jogos</h2>
             <ul className='grid gap-4'>
@@ -49,7 +51,7 @@ export default function Home() {
             </ul>
           </section>
 
-          {/* Seção: Notícias Recentes */}
+          {/* Notícias Recentes */}
           <section>
             <h2 className='text-2xl font-semibold mb-4'>Notícias Recentes</h2>
             <ul className='grid gap-4'>
@@ -66,7 +68,7 @@ export default function Home() {
             </ul>
           </section>
 
-          {/* Link para loja de roupas */}
+          {/* Link para loja */}
           <section className='text-center mt-8'>
             <Link
               href='https://www.furia.gg'
