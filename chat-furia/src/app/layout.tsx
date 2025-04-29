@@ -13,9 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'FURIA Chat Fan',
-  description:
-    'Interaja com a torcida e acompanhe os jogos da FURIA em tempo real.',
+  title: 'FURIA Notícias',
+  description: 'Landing page sobre o time FURIA',
+  icons: {
+    icon: '/furia-icon.png', //
+  },
 };
 
 export default function RootLayout({
@@ -25,9 +27,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-BR'>
-      <head>
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
