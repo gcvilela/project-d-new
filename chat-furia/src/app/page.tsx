@@ -7,8 +7,8 @@ export default function Home() {
     <>
       {/* Cabeçalho branco ocupando 100% da largura */}
       <header className='w-screen bg-white dark:bg-zinc-100 py-3 shadow-sm'>
-        <div className='w-full mx-auto text-center bg-pink-500'>
-          <div className='flex items-center justify-center gap-2 mb-1 bg-green-500'>
+        <div className='w-full mx-auto text-center'>
+          <div className='flex items-center justify-center gap-2 mb-1 '>
             <Image
               src='/logo-furia-titulo.svg'
               alt='FURIA título'
