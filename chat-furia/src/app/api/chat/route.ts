@@ -5,7 +5,7 @@ import { Client } from '@gradio/client';
 export async function POST(req: Request) {
   const {
     message,
-    system_message = "You are a friendly Chatbot ans answering questtions only in Portuguese.",
+    system_message = "You are a friendly Chatbot.",
     max_tokens = 512,
     temperature = 0.7,
     top_p = 0.95,
