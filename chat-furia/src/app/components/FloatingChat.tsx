@@ -1,9 +1,32 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { MessageCircle } from 'lucide-react';
 
 export default function FloatingChat() {
   const [open, setOpen] = useState(false);
+  const chatRef = useRef<HTMLDivElement | null>(null); // Ref para a caixa de chat
+
+  // Fechar o chat ao clicar fora
+  useEffect(() => {
+    // Função que verifica se o clique foi fora da caixa de chat
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        chatRef.current &&
+        !chatRef.current.contains(event.target as Node) &&
+        !(event.target as Element).closest('.fixed.bottom-6.right-6')
+      ) {
+        setOpen(false);
+      }
+    };
+
+    // Adiciona o event listener para cliques fora
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Limpeza do event listener
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -18,7 +41,10 @@ export default function FloatingChat() {
 
       {/* Caixa de chat flutuante */}
       {open && (
-        <div className='fixed bottom-20 right-6 w-80 bg-white border border-zinc-300 rounded-xl shadow-lg z-50'>
+        <div
+          ref={chatRef} // Referência para a caixa de chat
+          className='fixed bottom-20 right-6 w-80 bg-white border border-zinc-300 rounded-xl shadow-lg z-50'
+        >
           <div className='p-4 border-b font-semibold text-zinc-800'>
             Fale com a gente!
           </div>
