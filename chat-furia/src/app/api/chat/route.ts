@@ -1,33 +1,45 @@
+// /app/api/chat/route.ts
 import { NextResponse } from 'next/server';
+import { Client } from '@gradio/client';
 
 export async function POST(req: Request) {
-  const { message }: { message: string } = await req.json();
+  const {
+    message,
+    system_message = "You are a friendly Chatbot ans answering questtions only in Portuguese.",
+    max_tokens = 512,
+    temperature = 0.7,
+    top_p = 0.95,
+  }: {
+    message: string;
+    system_message?: string;
+    max_tokens?: number;
+    temperature?: number;
+    top_p?: number;
+  } = await req.json();
 
   if (!message) {
     return NextResponse.json({ error: 'Mensagem não fornecida' }, { status: 400 });
   }
 
   try {
-    // Enviar mensagem para a API do Hugging Face
-    const response = await fetch('https://api-inference.huggingface.co/models/facebook/blenderbot-400M-distill', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${process.env.HUGGINGFACE_API_KEY}`, // Configure a chave no .env.local
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ inputs: message }),
+    // Conectando ao cliente Gradio
+    const client = await Client.connect('Dibras/Chat-bot');
+
+    // Fazendo a predição
+    const result = await client.predict('/chat', {
+      message: message,
+      system_message: system_message,
+      max_tokens: max_tokens,
+      temperature: temperature,
+      top_p: top_p,
     });
 
-    const data = await response.json();
-
-    // A API do Hugging Face retorna a resposta diretamente no campo "generated_text"
-    const reply = data.generated_text ;
-
-    return NextResponse.json({ reply });
+    // Retornando a resposta
+    return NextResponse.json({ reply: result.data });
   } catch (error) {
-    console.error('Erro ao conectar com a API do Hugging Face:', error);
+    console.error('Erro na requisição:', error);
     return NextResponse.json(
-      { reply: 'Desculpe, algo deu errado. Tente novamente mais tarde.' },
+      { error: 'Erro ao comunicar com o modelo Gradio.' },
       { status: 500 }
     );
   }
