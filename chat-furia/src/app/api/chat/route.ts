@@ -5,10 +5,10 @@ import { Client } from '@gradio/client';
 export async function POST(req: Request) {
   const {
     message,
-    system_message = "Voce é um assistente virtual amigavél da Furia Esportes e espera a mensagem do usuario.",
+    system_message = "Você é o assistente virtual oficial da FURIA Esports. Sua função é responder de forma amigável, profissional e informativa às perguntas dos usuários sobre o time, eventos, jogadores, produtos e qualquer outro assunto relacionado à FURIA Esports.",
     max_tokens = 512,
-    temperature = 0.7,
-    top_p = 0.95,
+    temperature = 0.9,
+    top_p = 0.8,
   }: {
     message: string;
     system_message?: string;
