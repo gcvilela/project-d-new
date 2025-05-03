@@ -37,6 +37,12 @@ export default function FloatingChat() {
     }
   }, [messages]);
 
+  useEffect(() => {
+    if (open && messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [open]);
+
   // Enviar mensagem para a API
   const handleSendMessage = async () => {
     if (!input.trim()) return;
