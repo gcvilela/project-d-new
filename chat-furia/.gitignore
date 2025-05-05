@@ -54,3 +54,4 @@ build/
 *.bak
 *.tmp
 *.temp
+.vercel
