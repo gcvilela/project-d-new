@@ -175,23 +175,6 @@ export async function POST(req: Request) {
 
 ---
 
-## 🧪 Testes
-
-### Testes Unitários
-
-- Adicione testes para o componente `FloatingChat` e para a API `route.ts` utilizando frameworks como Jest ou React Testing Library.
-
-### Exemplos de Testes:
-
-- **Componente de chat**:
-  - Verificar se o botão flutuante abre/fecha o chat.
-  - Garantir que a última mensagem seja exibida ao abrir o chat.
-- **API**:
-  - Testar se a API retorna respostas válidas para mensagens enviadas.
-  - Verificar o comportamento em caso de erro na comunicação com o modelo.
-
----
-
 ## 📚 Tecnologias Utilizadas
 
 - **Next.js**: Framework para construção do frontend e backend.
