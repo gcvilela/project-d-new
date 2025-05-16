@@ -156,7 +156,7 @@ export async function POST(req: Request) {
 2. **Função `POST`**:
 
    - Recebe uma requisição contendo a mensagem do usuário e parâmetros opcionais (`system_message`, `max_tokens`, `temperature`, `top_p`).
-   - Valida se a mensagem foi fornecida. Caso contrário, retorna um erro HTTP 400.
+   - Valida se a mensagem foi fornecida. Caso contrário, retorna um erro HTTP 400 .
 
 3. **Conexão com o Gradio**:
 
