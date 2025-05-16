@@ -16,7 +16,7 @@ export async function POST(req: Request) {
     temperature?: number;
     top_p?: number;
   } = await req.json();
-
+ 
   if (!message) {
     return NextResponse.json({ error: 'Mensagem não fornecida' }, { status: 400 });
   }
