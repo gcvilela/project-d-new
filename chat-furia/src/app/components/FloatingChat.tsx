@@ -71,7 +71,7 @@ export default function FloatingChat() {
         )
       );
     } catch (error) {
-      console.error('Erro ao enviar mensagem:', error);
+      console.error('Erro  ao enviar mensagem:', error);
       setMessages((prev) =>
         prev.map((msg, index) =>
           index === prev.length - 1
